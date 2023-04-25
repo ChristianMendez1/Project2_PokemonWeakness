@@ -7,6 +7,7 @@ import HalfDamageFrom from "./components/HalfDamageFrom";
 import HalfDamageTo from "./components/HalfDamageTo";
 import NoDamageFrom from "./components/NoDamageFrom";
 import NoDamageTo from "./components/NoDamageTo";
+import styled from "styled-components"
 
 
 
@@ -28,35 +29,113 @@ export default function Type(props) {
             });
       }, []);
 
-      //pass props
+      function typecolor(type){
+        if(type === 'ice'){
+            return('lightblue')
+        } 
+        if(type === 'fire'){
+            return('red')
+        }
+        if(type === 'poison'){
+            return('purple')
+        }
+        if(type === 'normal'){
+            return('gray')
+        }
+        if(type === 'water'){
+            return('rgb(84, 110, 255)')
+        }
+        if(type === 'fairy'){
+            return('pink')
+        }
+        if(type === 'rock'){
+            return('rgb(160, 129, 45)')
+        }
+        if(type === 'ghost'){
+            return('rebeccapurple')
+        }
+        if(type === 'grass'){
+            return('green')
+        }
+        if(type === 'electric'){
+            return('rgba(255, 208, 0, 0.966)')
+        }
+        if(type === 'psychic'){
+            return('rgb(253, 71, 132)')
+        }
+        if(type === 'fighting'){
+            return('darkred')
+        }
+        if(type === 'ground'){
+            return('burlywood')
+        }
+        if(type === 'dark'){
+            return('rgb(46, 36, 29)')
+        }
+        if(type === 'flying'){
+            return('rgb(173, 108, 206)')
+        }
+        if(type === 'bug'){
+            return('rgb(94, 165, 94)')
+        }
+        if(type === 'lightgreen'){
+            return('red')
+        }
+        if(type === 'steel'){
+            return('lightgray')
+        }
+        if(type === 'dragon'){
+            return('darkorchid')
+        }
+      }
+
     return(
-        <div id='typeeffective'>
-            <p class='typename'>
+        <div id='typedivs'>
+            <h2>Type:</h2>
+            <p class='typename' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>
                 {name.toUpperCase()} 
             </p>
+            <h2>Super Effective Against:</h2>
             <div class='typediv'>
-                <h2>Super Effective Against:</h2>
-                {type && type.damage_relations.double_damage_to.map(element => <div class='typename'><DoubleDamageTo name={element.name.toUpperCase()}/></div>)}
+                {type && type.damage_relations.double_damage_to.map(element => 
+                    <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
+                        <DoubleDamageTo name={element.name.toUpperCase()}/>
+                    </div>)}
             </div>
-            <div>
-                <h2>Weak To:</h2>
-                {type && type.damage_relations.double_damage_from.map(element => <DoubleDamageFrom name={element.name.toUpperCase()}/>)}
+            <h2>Weak To:</h2>
+            <div class='typediv'>
+                {type && type.damage_relations.double_damage_from.map(element => 
+                    <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
+                        <DoubleDamageFrom name={element.name.toUpperCase()}/>
+                    </div>)}
             </div>
-            <div>
-                <h2>Resists:</h2>
-                {type && type.damage_relations.half_damage_from.map(element => <HalfDamageFrom name={element.name.toUpperCase()}/>)}
+            <h2>Resists:</h2>
+            <div class='typediv'>
+                {type && type.damage_relations.half_damage_from.map(element => 
+                    <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
+                        <HalfDamageFrom name={element.name.toUpperCase()}/>
+                    </div>)}
             </div>
-            <div>
-                <h2>Resisted by:</h2>
-                {type && type.damage_relations.half_damage_to.map(element => <HalfDamageTo name={element.name.toUpperCase()}/>)}
+            <h2>Resisted by:</h2>
+            <div class='typediv'>
+                {type && type.damage_relations.half_damage_to.map(element => 
+                    <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
+                        <HalfDamageTo name={element.name.toUpperCase()}/>
+                    </div>)}
             </div>
-            <div>
-                <h2>Immune to:</h2>
-                {type && type.damage_relations.no_damage_from.map(element => <NoDamageFrom name={element.name.toUpperCase()}/>)}
+            <h2>Immune to:</h2>
+            <div class='typediv'>
+                {type && type.damage_relations.no_damage_from.map(element => 
+                    <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
+                        <NoDamageFrom name={element.name.toUpperCase()}/>
+                    </div>)}
             </div>
-            <div>
-                <h2>No Damage to:</h2>
-                {type && type.damage_relations.no_damage_to.map(element => <NoDamageTo name={element.name.toUpperCase()}/>)}
+            <h2>No Damage to:</h2>
+            <div class='typediv'>
+                {type && type.damage_relations.no_damage_to.map(element => 
+                    <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
+                        <NoDamageTo name={element.name.toUpperCase()}/>
+                    </div>)}
             </div>
         </div>
     )

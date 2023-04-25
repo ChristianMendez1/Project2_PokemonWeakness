@@ -1,5 +1,10 @@
+html{
+    height:100%;
+    width:100%;
+}
+
 body {
-    background-color: rgb(230, 207, 9);
+    background-color: white;
     font-family: Arial;
 }
 
@@ -13,16 +18,18 @@ body {
 }
 
 #home {
-    width: 100%;
+    width: 90%;
     display: flex;
-    margin: 10px;
-    margin-left: 0;
     flex-wrap: wrap;
     
 }
 
 #homediv {
-    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+#App{
 }
 
 .typename {
