@@ -88,8 +88,13 @@ function typecolor(type){
 
 return (
     <div id= 'homediv' >
-        <div id='home'>
-            {typenamemap}
+        <div>
+            <p id='pokemoninst'>
+                Click on the Pokemon type to see how much damage you deal to and take from other types
+            </p>
+            <div id='home'>
+                {typenamemap}
+            </div>
         </div>
     </div>
 )

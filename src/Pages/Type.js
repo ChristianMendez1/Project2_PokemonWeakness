@@ -91,11 +91,15 @@ export default function Type(props) {
 
     return(
         <div id='typedivs'>
+            <p id='pokemoninst'>
+                Information about the {name} type. Click above to go back.
+            </p>
             <h2>Type:</h2>
             <p class='typename' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>
                 {name.toUpperCase()} 
             </p>
             <h2>Super Effective Against:</h2>
+            <p>*you deal double damage against...*</p>
             <div class='typediv'>
                 {type && type.damage_relations.double_damage_to.map(element => 
                     <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
@@ -103,6 +107,7 @@ export default function Type(props) {
                     </div>)}
             </div>
             <h2>Weak To:</h2>
+            <p>*you take double damage from...*</p>
             <div class='typediv'>
                 {type && type.damage_relations.double_damage_from.map(element => 
                     <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
@@ -110,6 +115,7 @@ export default function Type(props) {
                     </div>)}
             </div>
             <h2>Resists:</h2>
+            <p>*you take half damage from...*</p>
             <div class='typediv'>
                 {type && type.damage_relations.half_damage_from.map(element => 
                     <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
@@ -117,6 +123,7 @@ export default function Type(props) {
                     </div>)}
             </div>
             <h2>Resisted by:</h2>
+            <p>*you do half damage to...*</p>
             <div class='typediv'>
                 {type && type.damage_relations.half_damage_to.map(element => 
                     <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
@@ -124,6 +131,7 @@ export default function Type(props) {
                     </div>)}
             </div>
             <h2>Immune to:</h2>
+            <p>*you take no damage from...*</p>
             <div class='typediv'>
                 {type && type.damage_relations.no_damage_from.map(element => 
                     <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
@@ -131,6 +139,7 @@ export default function Type(props) {
                     </div>)}
             </div>
             <h2>No Damage to:</h2>
+            <p>*you do no damage to...*</p>
             <div class='typediv'>
                 {type && type.damage_relations.no_damage_to.map(element => 
                     <div class='typename' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
