@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 export default function Home() {
 //map for types
 
-const typenamemap = typename.map((stock) => {
-    const {type} = stock;
+const typenamemap = typename.map((element) => {
+    const {name} = element;
     return(
-        <Link to={`/type/${type}`}>
-            <li id='stockname'>{name}</li>
+        <Link to={`/type/${name}`}>
+            <li id='typename'>{name}</li>
         </Link>
     )
 })
 return (
-    <div id='dashboard'>
-        {stocksymbolmap}
+    <div>
+        {typenamemap}
     </div>
 )
 
