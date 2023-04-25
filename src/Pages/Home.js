@@ -8,16 +8,15 @@ const typenamemap = typename.map((element) => {
     const {name} = element;
     return(
         <Link to={`/type/${name}`}>
-            <li id='typename'>{name}</li>
+            <li class='typename'>{name.toUpperCase()}</li>
         </Link>
     )
 })
 return (
-    <div>
-        <h1>
-            Pokemon Type Strengths/Weakness
-        </h1>
-        {typenamemap}
+    <div id= 'homediv'>
+        <div id='home'>
+            {typenamemap}
+        </div>
     </div>
 )
 

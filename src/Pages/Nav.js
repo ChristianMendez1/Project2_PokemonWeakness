@@ -1,0 +1,13 @@
+import pokemonlogo from '../pokemonlogo.png'
+import { Link } from "react-router-dom";
+
+export default function Nav(){
+    return(
+    <Link to="/">
+        <h1 id='title'>
+            <img id='pokemonlogo' src={pokemonlogo} />
+            Type Strengths/Weakness
+        </h1>
+    </Link>
+    )
+}
