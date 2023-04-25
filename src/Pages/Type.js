@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom"
+import DoubleDamageTo from "./components/DoubleDamageTo";
 
 export default function Type(props) {
     //fetch and show info, maybe pass components
@@ -19,9 +20,11 @@ export default function Type(props) {
             });
       }, []);
 
+      //pass props
     return(
         <div>
-            {type && type.damage_relations.double_damage_from[0].name}
+            {/* {type && type.damage_relations.double_damage_from[0].name} */}
+            {type && type.damage_relations.double_damage_to.map(element => <DoubleDamageTo name={element.name}/>)}
         </div>
     )
 }
