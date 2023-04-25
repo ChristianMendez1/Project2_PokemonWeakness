@@ -1,3 +1,7 @@
-export default function DoubleDamageFrom() {
-
+export default function DoubleDamageFrom({name}) {
+    return(
+        <div>
+            {name}
+        </div>
+    )
 }
