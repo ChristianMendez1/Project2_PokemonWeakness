@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom"
+import { Link } from "react-router-dom";
 import DoubleDamageTo from "./components/DoubleDamageTo";
 import DoubleDamageFrom from "./components/DoubleDamageFrom";
 import HalfDamageFrom from "./components/HalfDamageFrom";
@@ -28,6 +29,12 @@ export default function Type(props) {
       //pass props
     return(
         <div>
+            <h1>
+                {name.toUpperCase()} 
+            </h1>
+            <Link to="/">
+                    back
+            </Link>
             <div>
                 <h2>Super Effective Against:</h2>
                 {type && type.damage_relations.double_damage_to.map(element => <DoubleDamageTo name={element.name}/>)}

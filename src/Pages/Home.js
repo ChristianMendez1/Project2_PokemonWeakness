@@ -14,6 +14,9 @@ const typenamemap = typename.map((element) => {
 })
 return (
     <div>
+        <h1>
+            Pokemon Type Strengths/Weakness
+        </h1>
         {typenamemap}
     </div>
 )
