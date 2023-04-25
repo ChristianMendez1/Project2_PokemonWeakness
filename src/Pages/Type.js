@@ -92,7 +92,7 @@ export default function Type(props) {
     return(
         <div id='typedivs'>
             <p id='pokemoninst'>
-                Information about the {name} type. Click above to go back.
+                Information about the {name.toUpperCase()} type. Click above to go back.
             </p>
             <h2>Type:</h2>
             <p class='typename' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>
