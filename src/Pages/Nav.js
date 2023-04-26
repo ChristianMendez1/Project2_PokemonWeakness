@@ -6,7 +6,7 @@ export default function Nav(){
     <Link to="/">
         <h1 id='title'>
             <img id='pokemonlogo' src={pokemonlogo} />
-            Type Strengths/Weakness
+            Type Strengths/Weaknesses
         </h1>
     </Link>
     )

@@ -168,7 +168,7 @@ return (
     <div id= 'homediv' >
         <div>
             <p id='pokemoninst'>
-                Click on the Pokemon type to see how much damage you deal to and take from other types
+                Click on a Pokemon type to see its stengths and weaknesses
             </p>
             <div id='home'>
                 {typenamemap}

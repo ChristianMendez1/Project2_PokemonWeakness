@@ -7,9 +7,6 @@ import HalfDamageFrom from "./components/HalfDamageFrom";
 import HalfDamageTo from "./components/HalfDamageTo";
 import NoDamageFrom from "./components/NoDamageFrom";
 import NoDamageTo from "./components/NoDamageTo";
-import styled from "styled-components"
-
-
 
 export default function Type(props) {
     //fetch and show info, maybe pass components
