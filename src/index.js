@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <StrictMode>
-    <Router basename= '/Project2_PokemonWeakness/'>
+    <Router>
       <App />
     </Router>
   </StrictMode>,
