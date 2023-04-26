@@ -93,21 +93,23 @@ export default function Type(props) {
             </p>
             <div id='row'>
                 <div class='column'>
-                    <h2>Type:</h2>
-                    <p class='typename2' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>
-                        {name.toUpperCase()} 
-                    </p>
-                    <h2>Super Effective Against:</h2>
-                    <p>*you deal double damage against...*</p>
                     <div class='typediv'>
+                        <h2 class='abovedescription'>Type</h2>
+                        <p class='typename2' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>
+                            {name.toUpperCase()} 
+                        </p>
+                        </div>
+                    <div class='typediv'>
+                        <h2 class='abovedescription'>Strong Against</h2>
+                        <p class='description'>*you deal double damage against...*</p>
                         {type && type.damage_relations.double_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <DoubleDamageTo name={element.name.toUpperCase()}/>
                             </div>)}
                     </div>
-                    <h2>Weak To:</h2>
-                    <p>*you take double damage from...*</p>
                     <div class='typediv'>
+                        <h2 class='abovedescription'>Weak To</h2>
+                        <p class='description'>*you take double damage from...*</p>
                         {type && type.damage_relations.double_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <DoubleDamageFrom name={element.name.toUpperCase()}/>
@@ -115,35 +117,33 @@ export default function Type(props) {
                     </div>
                 </div>
                 <div class='column'>
-                    <h2>Resists:</h2>
-                    <p>*you take half damage from...*</p>
                     <div class='typediv'>
+                        <h2 class='abovedescription'>Resists</h2>
+                        <p class='description'>*you take half damage from...*</p>
                         {type && type.damage_relations.half_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <HalfDamageFrom name={element.name.toUpperCase()}/>
                             </div>)}
                     </div>
-                    <h2>Resisted by:</h2>
-                    <p>*you do half damage to...*</p>
                     <div class='typediv'>
+                        <h2 class='abovedescription'>Resisted by</h2>
+                        <p class='description'>*you do half damage to...*</p>
                         {type && type.damage_relations.half_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <HalfDamageTo name={element.name.toUpperCase()}/>
                             </div>)}
-                    </div>
-                </div>
-                <div class='column'>
-                    <h2>Immune to:</h2>
-                    <p>*you take no damage from...*</p>
+                    </div>          
                     <div class='typediv'>
+                        <h2 class='abovedescription'>Immune to</h2>
+                        <p class='description'>*you take no damage from...*</p>
                         {type && type.damage_relations.no_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <NoDamageFrom name={element.name.toUpperCase()}/>
                             </div>)}
                     </div>
-                    <h2>No Damage to:</h2>
-                    <p>*you do no damage to...*</p>
                     <div class='typediv'>
+                        <h2 class='abovedescription'>No Damage to</h2>
+                        <p class='description'>*you do no damage to...*</p>
                         {type && type.damage_relations.no_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <NoDamageTo name={element.name.toUpperCase()}/>
@@ -152,5 +152,6 @@ export default function Type(props) {
                 </div>
             </div>
         </div>
+        
     )
 }
