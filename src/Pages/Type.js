@@ -86,6 +86,8 @@ export default function Type(props) {
         }
       }
 
+      window.scrollTo(0,0);
+
     return(
         <div id='typedivs'>
             <p id='pokemoninst'>
@@ -98,14 +100,15 @@ export default function Type(props) {
                         <p class='typename2' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>
                             {name.toUpperCase()} 
                         </p>
-                        </div>
+                    </div>
                     <div class='typediv'>
                         <h2 class='abovedescription'>Strong Against</h2>
                         <p class='description'>*you deal double damage against...*</p>
                         {type && type.damage_relations.double_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <DoubleDamageTo name={element.name.toUpperCase()}/>
-                            </div>)}
+                            </div>)
+                        }
                     </div>
                     <div class='typediv'>
                         <h2 class='abovedescription'>Weak To</h2>
@@ -113,7 +116,8 @@ export default function Type(props) {
                         {type && type.damage_relations.double_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <DoubleDamageFrom name={element.name.toUpperCase()}/>
-                            </div>)}
+                            </div>)
+                        }
                     </div>
                 </div>
                 <div class='column'>
@@ -123,7 +127,8 @@ export default function Type(props) {
                         {type && type.damage_relations.half_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <HalfDamageFrom name={element.name.toUpperCase()}/>
-                            </div>)}
+                            </div>)
+                        }
                     </div>
                     <div class='typediv'>
                         <h2 class='abovedescription'>Resisted by</h2>
@@ -131,7 +136,8 @@ export default function Type(props) {
                         {type && type.damage_relations.half_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <HalfDamageTo name={element.name.toUpperCase()}/>
-                            </div>)}
+                            </div>)
+                        }
                     </div>          
                     <div class='typediv'>
                         <h2 class='abovedescription'>Immune to</h2>
@@ -139,7 +145,8 @@ export default function Type(props) {
                         {type && type.damage_relations.no_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <NoDamageFrom name={element.name.toUpperCase()}/>
-                            </div>)}
+                            </div>)
+                        }
                     </div>
                     <div class='typediv'>
                         <h2 class='abovedescription'>No Damage to</h2>
@@ -147,7 +154,8 @@ export default function Type(props) {
                         {type && type.damage_relations.no_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
                                 <NoDamageTo name={element.name.toUpperCase()}/>
-                            </div>)}
+                            </div>)
+                        }
                     </div>
                 </div>
             </div>
