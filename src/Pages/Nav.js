@@ -1,4 +1,4 @@
-import pokemonlogo from '../pokemonlogo.png'
+import pokemonlogo from '../Photos/pokemonlogo.png'
 import { Link } from "react-router-dom";
 
 export default function Nav(){

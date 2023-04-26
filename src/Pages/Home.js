@@ -1,5 +1,24 @@
 import { typename } from "./Data"
 import { Link } from "react-router-dom";
+import pikachu from '../Photos/pikachu.png'
+import dratini from '../Photos/dratini.png'
+import umbreon from '../Photos/umbreon.png'
+import caterpie from '../Photos/caterpie.png'
+import bulbasaur from '../Photos/bulbasaur.png'
+import chansey from '../Photos/chansey.png'
+import charmander from '../Photos/charmander.png'
+import clefairy from '../Photos/clefairy.png'
+import squirtle from '../Photos/squirtle.png'
+import melmetal from '../Photos/melmetal.png'
+import arbok from '../Photos/arbok.png'
+import diglett from '../Photos/diglett.png'
+import onix from '../Photos/onix.png'
+import eiscue from '../Photos/eiscue.png'
+import abra from '../Photos/abra.png'
+import machamp from '../Photos/machamp.png'
+import dusknoir from '../Photos/dusknoir.png'
+import corvisquire from '../Photos/corvisquire.png'
+
 
 export default function Home() {
 //map for types
@@ -20,6 +39,7 @@ const typenamemap = typename.map((element) => {
     const {name} = element;
     return(
         <Link to={`/type/${name}`}>
+            <img id='pokemonphotos' src={typepicture(name)} />
             <li class='typename' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>{name.toUpperCase()}</li>
         </Link>
     )
@@ -84,6 +104,64 @@ function typecolor(type){
         return('darkorchid')
     }
   }
+
+function typepicture(type){
+    if(type === 'ice'){
+        return(eiscue)
+    } 
+    if(type === 'fire'){
+        return(charmander)
+    }
+    if(type === 'poison'){
+        return(arbok)
+    }
+    if(type === 'normal'){
+        return(chansey)
+    }
+    if(type === 'water'){
+        return(squirtle)
+    }
+    if(type === 'fairy'){
+        return(clefairy)
+    }
+    if(type === 'rock'){
+        return(onix)
+    }
+    if(type === 'ghost'){
+        return(dusknoir)
+    }
+    if(type === 'grass'){
+        return(bulbasaur)
+    }
+    if(type === 'electric'){
+        return(pikachu)
+    }
+    if(type === 'psychic'){
+        return(abra)
+    }
+    if(type === 'fighting'){
+        return(machamp)
+    }
+    if(type === 'ground'){
+        return(diglett)
+    }
+    if(type === 'dark'){
+        return(umbreon)
+    }
+    if(type === 'flying'){
+        return(corvisquire)
+    }
+    if(type === 'bug'){
+        return(caterpie)
+    }
+    if(type === 'steel'){
+        return(melmetal)
+    }
+    if(type === 'dragon'){
+        return(dratini)
+    }
+  }
+
 
 
 return (
