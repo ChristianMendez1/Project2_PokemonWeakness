@@ -87,15 +87,13 @@ body {
 .column{
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
-    margin-right: 5%;
 }
 
 #row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 #homediv a:link { 
@@ -137,5 +135,10 @@ h1 {
     display: flex;
     align-self: center;
     text-decoration: underline;
+}
+
+#home {
+    display: flex;
+    justify-content: space-evenly;
 }
 
