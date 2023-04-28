@@ -11,9 +11,9 @@ import NoDamageTo from "./components/NoDamageTo";
 export default function Type(props) {
     //fetch and show info, maybe pass components
     const [type, setType] = useState(null); 
+
     const params = useParams()
     const name = params.name
-    const apiKey = "69860af27f8400de88f48bbf826f6298";
     const url = `https://pokeapi.co/api/v2/type/${name}`
 
     useEffect(() => {
@@ -24,7 +24,8 @@ export default function Type(props) {
             .then(data => {
                 setType(data)
             });
-      }, []);
+            console.log('fetch')
+      }, [name]);
 
       function typecolor(type){
         if(type === 'ice'){
@@ -106,7 +107,9 @@ export default function Type(props) {
                         <p class='description'>*you deal double damage against...*</p>
                         {type && type.damage_relations.double_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
-                                <DoubleDamageTo name={element.name.toUpperCase()}/>
+                                <Link to={`/type/${element.name}`}>
+                                    <DoubleDamageTo name={element.name.toUpperCase()}/>
+                                </Link>
                             </div>)
                         }
                     </div>
@@ -115,7 +118,9 @@ export default function Type(props) {
                         <p class='description'>*you take double damage from...*</p>
                         {type && type.damage_relations.double_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
-                                <DoubleDamageFrom name={element.name.toUpperCase()}/>
+                                <Link to={`/type/${element.name}`}>
+                                    <DoubleDamageFrom name={element.name.toUpperCase()}/>
+                                </Link>
                             </div>)
                         }
                     </div>
@@ -126,7 +131,9 @@ export default function Type(props) {
                         <p class='description'>*you take half damage from...*</p>
                         {type && type.damage_relations.half_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
-                                <HalfDamageFrom name={element.name.toUpperCase()}/>
+                                <Link to={`/type/${element.name}`}>
+                                    <HalfDamageFrom name={element.name.toUpperCase()}/>
+                                </Link>
                             </div>)
                         }
                     </div>
@@ -135,7 +142,9 @@ export default function Type(props) {
                         <p class='description'>*you do half damage to...*</p>
                         {type && type.damage_relations.half_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
-                                <HalfDamageTo name={element.name.toUpperCase()}/>
+                                <Link to={`/type/${element.name}`}>
+                                    <HalfDamageTo name={element.name.toUpperCase()}/>
+                                </Link>
                             </div>)
                         }
                     </div>          
@@ -144,7 +153,9 @@ export default function Type(props) {
                         <p class='description'>*you take no damage from...*</p>
                         {type && type.damage_relations.no_damage_from.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
-                                <NoDamageFrom name={element.name.toUpperCase()}/>
+                                <Link to={`/type/${element.name}`}>
+                                    <NoDamageFrom name={element.name.toUpperCase()}/>
+                                </Link>
                             </div>)
                         }
                     </div>
@@ -153,7 +164,9 @@ export default function Type(props) {
                         <p class='description'>*you do no damage to...*</p>
                         {type && type.damage_relations.no_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>
-                                <NoDamageTo name={element.name.toUpperCase()}/>
+                                <Link to={`/type/${element.name}`}>
+                                    <NoDamageTo name={element.name.toUpperCase()}/>
+                                </Link>
                             </div>)
                         }
                     </div>
