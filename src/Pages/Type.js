@@ -7,6 +7,7 @@ import HalfDamageFrom from "./components/HalfDamageFrom";
 import HalfDamageTo from "./components/HalfDamageTo";
 import NoDamageFrom from "./components/NoDamageFrom";
 import NoDamageTo from "./components/NoDamageTo";
+import { typename } from "./Data";
 
 export default function Type(props) {
     //fetch and show info, maybe pass components
@@ -103,7 +104,7 @@ export default function Type(props) {
                         </p>
                     </div>
                     <div class='typediv'>
-                        <h2 class='abovedescription'>Strong Against</h2>
+                        <h2 class='abovedescription'>{name.toUpperCase()} is Strong Against</h2>
                         <p class='description'>*you deal double damage against...*</p>
                         {type && type.damage_relations.double_damage_to.map(element => 
                             <div class='typename2' style={{backgroundColor: element.name ? typecolor(element.name) : 'gray'}}>

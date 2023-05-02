@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Project2_PokemonWeakness
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React App that fetches Pokemon type information from Pokemon api.
 
-## Available Scripts
+# Motivation
 
-In the project directory, you can run:
+I always wanted to create this app. I play a lot of pokemon and I constantly need to know the strengths and weaknesses of certain types. All of the major sites that contain this information are difficult to navigate through. I wanted to make a app that's easy to navigate.
 
-### `npm start`
+# Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![readmescreenshot](https://i.imgur.com/zT2vN1Q.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Built with
 
-### `npm test`
+React, Javascript, HTML, and CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Features
 
-### `npm run build`
+Uses React to fetch data from Pokemon API. Uses CSS flexbox to make app accessable through mobile. Javascript functions and in line conditions are used to show images and change colors. Browser router is used to set urls and Links are used to send the user to specified urls.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# How to use
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Deployed through https://christianmendez1.github.io/Project2_PokemonWeakness/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Approach taken
 
-### `npm run eject`
+Uses React to map and fetch data from a Pokemon API and puts them into Links. The data is displayed into the homepage designated by browser router. One function is used to display a pokemon picture based on the mapped fetch data. Another function is used to change the color of the Link depending on the in line condition. When the user clicks on Link it takes you to a url based on the data you clicked and displays you information about the data. This data is also mapped through Links and arrays which if you click navigates you to the specified url. There is also a Navigation bar that takes you back to the homepage.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Code Example
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+const typenamemap = typename.map((element) => {
+    const {name} = element;
+    return(
+        <Link to={`/type/${name}`}>
+            <img id='pokemonphotos' src={typepicture(name)} />
+            <li class='typename' style={{backgroundColor: name ? typecolor(name) : 'gray'}}>{name.toUpperCase()}</li>
+        </Link>
+    )
+})
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Installation
+```
+Clone through https://github.com/ChristianMendez1/Project2_PokemonWeakness
+Tested through Visual Stuidio Code's live server. 
+Remove basename= '/Project2_PokemonWeakness/' from index.js to npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Credits
 
-## Learn More
+```
+https://pokeapi.co/docs/v2#types 
+https://bulbapedia.bulbagarden.net/wiki/Main_Page (pokemon images)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
